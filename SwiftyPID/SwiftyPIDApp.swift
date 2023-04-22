@@ -11,7 +11,8 @@ import SwiftUI
 struct SwiftyPIDApp: App {
     var body: some Scene {
         WindowGroup {
-            SliderRotatingBarView()
+//            SliderRotatingBarView()
+            SimulationView()
         }
     }
 }

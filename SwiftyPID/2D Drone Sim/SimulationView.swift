@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-
 struct SimulationView: View {
     @ObservedObject var drone = Drone(position: CGPoint(x: 200, y: 300))
     
@@ -49,7 +48,7 @@ struct SimulationView: View {
                 default:
                     self.pidControllerX = newController
                 }
-            }))
+            }), selectedController: $selectedController)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.gray.opacity(0.5))

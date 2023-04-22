@@ -51,8 +51,3 @@ struct RotatingBarView: View {
 
 
 
-struct RotatingBarView_Previews: PreviewProvider {
-    static var previews: some View {
-        RotatingBarView()
-    }
-}

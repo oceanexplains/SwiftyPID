@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ControlPanelView: View {
     @Binding var pidController: PIDController
-    @State private var selectedController: Int = 0
+    @Binding var selectedController: Int
     
     var body: some View {
         VStack {
@@ -22,13 +22,13 @@ struct ControlPanelView: View {
             
             VStack {
                 Text("Kp: \(pidController.kp, specifier: "%.2f")")
-                Slider(value: $pidController.kp, in: 0...100)
+                Slider(value: $pidController.kp, in: 0...2)
                 
                 Text("Ki: \(pidController.ki, specifier: "%.2f")")
-                Slider(value: $pidController.ki, in: 0...100)
+                Slider(value: $pidController.ki, in: 0...2)
                 
                 Text("Kd: \(pidController.kd, specifier: "%.2f")")
-                Slider(value: $pidController.kd, in: 0...100)
+                Slider(value: $pidController.kd, in: 0...2)
             }
             .padding(.horizontal)
         }

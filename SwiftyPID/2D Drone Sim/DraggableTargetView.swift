@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-
 struct DraggableTargetView: View {
     @Binding var targetPosition: CGPoint
     
@@ -16,8 +15,7 @@ struct DraggableTargetView: View {
         Circle()
             .fill(Color.red)
             .frame(width: 40, height: 40)
-            .offset(x: dragOffset.width, y: dragOffset.height)
-            .position(x: targetPosition.x, y: targetPosition.y)
+            .position(x: targetPosition.x + dragOffset.width, y: targetPosition.y + dragOffset.height)
             .gesture(
                 DragGesture()
                     .onChanged { value in
