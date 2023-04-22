@@ -12,6 +12,8 @@
 		5441CD5029F37C8F009E7B59 /* DraggableTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5441CD4F29F37C8F009E7B59 /* DraggableTargetView.swift */; };
 		5441CD5229F37CA4009E7B59 /* ThrusterFlameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5441CD5129F37CA4009E7B59 /* ThrusterFlameView.swift */; };
 		5441CD5429F37CB8009E7B59 /* SimulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5441CD5329F37CB8009E7B59 /* SimulationView.swift */; };
+		5441CD5629F37CE3009E7B59 /* DroneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5441CD5529F37CE3009E7B59 /* DroneView.swift */; };
+		5441CD5829F37CF6009E7B59 /* ControlPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5441CD5729F37CF6009E7B59 /* ControlPanelView.swift */; };
 		F18B156A29F33E4E0097C3C9 /* SwiftyPIDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B156929F33E4E0097C3C9 /* SwiftyPIDApp.swift */; };
 		F18B156C29F33E4E0097C3C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B156B29F33E4E0097C3C9 /* ContentView.swift */; };
 		F18B156E29F33E500097C3C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F18B156D29F33E500097C3C9 /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 		5441CD4F29F37C8F009E7B59 /* DraggableTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableTargetView.swift; sourceTree = "<group>"; };
 		5441CD5129F37CA4009E7B59 /* ThrusterFlameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrusterFlameView.swift; sourceTree = "<group>"; };
 		5441CD5329F37CB8009E7B59 /* SimulationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationView.swift; sourceTree = "<group>"; };
+		5441CD5529F37CE3009E7B59 /* DroneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroneView.swift; sourceTree = "<group>"; };
+		5441CD5729F37CF6009E7B59 /* ControlPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPanelView.swift; sourceTree = "<group>"; };
 		F18B156629F33E4E0097C3C9 /* SwiftyPID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyPID.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F18B156929F33E4E0097C3C9 /* SwiftyPIDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyPIDApp.swift; sourceTree = "<group>"; };
 		F18B156B29F33E4E0097C3C9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +65,8 @@
 				5441CD4F29F37C8F009E7B59 /* DraggableTargetView.swift */,
 				5441CD5129F37CA4009E7B59 /* ThrusterFlameView.swift */,
 				5441CD5329F37CB8009E7B59 /* SimulationView.swift */,
+				5441CD5529F37CE3009E7B59 /* DroneView.swift */,
+				5441CD5729F37CF6009E7B59 /* ControlPanelView.swift */,
 			);
 			path = "2D Drone Sim";
 			sourceTree = "<group>";
@@ -176,7 +182,9 @@
 				F18B156C29F33E4E0097C3C9 /* ContentView.swift in Sources */,
 				F18B156A29F33E4E0097C3C9 /* SwiftyPIDApp.swift in Sources */,
 				5441CD4C29F37C44009E7B59 /* Drone.swift in Sources */,
+				5441CD5829F37CF6009E7B59 /* ControlPanelView.swift in Sources */,
 				5441CD5029F37C8F009E7B59 /* DraggableTargetView.swift in Sources */,
+				5441CD5629F37CE3009E7B59 /* DroneView.swift in Sources */,
 				F18B157929F33EAC0097C3C9 /* RotatingBarView.swift in Sources */,
 				5441CD4E29F37C64009E7B59 /* PIDController.swift in Sources */,
 				5441CD5229F37CA4009E7B59 /* ThrusterFlameView.swift in Sources */,
