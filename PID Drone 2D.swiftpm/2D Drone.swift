@@ -142,7 +142,7 @@ struct SimulationView: View {
                 default:
                     self.pidControllerX = newController
                 }
-            }))
+            }), selectedController: $selectedController)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.gray.opacity(0.5))
@@ -245,7 +245,7 @@ struct ContentView: View {
 
 struct ControlPanelView: View {
     @Binding var pidController: PIDController
-    @State private var selectedController: Int = 0
+    @Binding var selectedController: Int
     
     var body: some View {
         VStack {
