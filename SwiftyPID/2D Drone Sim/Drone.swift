@@ -30,9 +30,21 @@ class Drone: ObservableObject {
         self.gravity = gravity
     }
     
-    func applyForce(forceX: CGFloat, forceY: CGFloat) {
+    //Pre bars
+//    func applyForce(forceX: CGFloat, forceY: CGFloat) {
+//        velocity.x += forceX / mass
+//        velocity.y += (forceY - mass * gravity) / mass
+//    }
+    
+//    func applyForce(forceX: CGFloat, forceY: CGFloat, offsetX: CGFloat = 0) {
+//            velocity.x += forceX / mass
+//            velocity.y += (forceY - mass * gravity) / mass
+//            applyTorque(torque: forceY * offsetX)
+//        }
+    func applyForce(forceX: CGFloat, forceY: CGFloat, offsetX: CGFloat = 0) {
         velocity.x += forceX / mass
         velocity.y += (forceY - mass * gravity) / mass
+        applyTorque(torque: forceY * offsetX / inertia)
     }
     
     func applyTorque(torque: CGFloat) {

@@ -14,7 +14,7 @@ struct SimulationView: View {
     
     @State private var pidControllerX = PIDController(kp: 0.5, ki: 0.1, kd: 0.05)
     @State private var pidControllerY = PIDController(kp: 1.0, ki: 0.2, kd: 0.1)
-    @State private var pidControllerOrientation = PIDController(kp: 50, ki: 0.5, kd: 5)
+    @State private var pidControllerOrientation = PIDController(kp: 0.5, ki: 0.5, kd: 0.55)
     
     @State private var leftThrusterForce: CGFloat = 0
     @State private var rightThrusterForce: CGFloat = 0
@@ -53,16 +53,34 @@ struct SimulationView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.gray.opacity(0.5))
         .edgesIgnoringSafeArea(.all)
+//        .onAppear {
+//            Timer.scheduledTimer(withTimeInterval: Double(dt), repeats: true) { _ in
+//                let controlActionX = pidControllerX.updateControlAction(target: targetPosition.x, current: drone.position.x, dt: dt)
+//                let controlActionY = pidControllerY.updateControlAction(target: targetPosition.y, current: drone.position.y, dt: dt)
+//                let controlActionOrientation = pidControllerOrientation.updateControlAction(target: 0, current: drone.angle, dt: dt)
+//
+//                leftThrusterForce = (controlActionY + controlActionOrientation) / 2
+//                rightThrusterForce = (controlActionY - controlActionOrientation) / 2
+//
+//                drone.applyForce(forceX: controlActionX, forceY: leftThrusterForce, offsetX: -50)
+//                drone.applyForce(forceX: controlActionX, forceY: rightThrusterForce, offsetX: 50)
+//                drone.update(dt: dt)
+//            }
+//        }
         .onAppear {
             Timer.scheduledTimer(withTimeInterval: Double(dt), repeats: true) { _ in
                 let controlActionX = pidControllerX.updateControlAction(target: targetPosition.x, current: drone.position.x, dt: dt)
                 let controlActionY = pidControllerY.updateControlAction(target: targetPosition.y, current: drone.position.y, dt: dt)
                 let controlActionOrientation = pidControllerOrientation.updateControlAction(target: 0, current: drone.angle, dt: dt)
                 
-                drone.applyForce(forceX: controlActionX, forceY: controlActionY)
-                drone.applyTorque(torque: controlActionOrientation)
+                leftThrusterForce = (controlActionY + controlActionOrientation) / 2
+                rightThrusterForce = (controlActionY - controlActionOrientation) / 2
+                
+                drone.applyForce(forceX: controlActionX / 2, forceY: leftThrusterForce, offsetX: -50)
+                drone.applyForce(forceX: controlActionX / 2, forceY: rightThrusterForce, offsetX: 50)
                 drone.update(dt: dt)
             }
         }
+
     }
 }
